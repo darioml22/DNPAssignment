@@ -5,15 +5,15 @@ namespace InMemoryRepositories;
 
 public class UserInMemoryRepository : IUserRepository
 {
-    private List<User> users;
+    private List<User> users= new List<User>();
 
-    public Task<User> AddUser(User user)
+    public async Task<User> AddUser(User user)
     {
         user.Id = users.Any()
             ? users.Max(u=> u.Id) + 1
             : 1;
         users.Add(user);
-        return Task.FromResult(user);
+        return await Task.FromResult(user);
     }
 
     public Task UpdateUser(User user)
@@ -39,7 +39,7 @@ public class UserInMemoryRepository : IUserRepository
         return Task.CompletedTask;
     }
 
-    public Task<User> GetUser(int userId)
+    public async Task<User> GetUser(int userId)
     {
         User? user = users.SingleOrDefault(u=> u.Id == userId);
         if (user == null)
@@ -47,7 +47,7 @@ public class UserInMemoryRepository : IUserRepository
             throw new InvalidOperationException($"User with id {userId} does not exist");
         }
         
-        return Task.FromResult(user);
+        return await Task.FromResult(user);
     }
 
     public IQueryable<User> GetUsers()

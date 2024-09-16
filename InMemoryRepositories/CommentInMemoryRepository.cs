@@ -5,15 +5,15 @@ namespace InMemoryRepositories;
 
 public class CommentInMemoryRepository : ICommentRepository
 {
-    private List<Comment> comments;
+    private List<Comment> comments= new List<Comment>();
 
-    public Task<Comment> AddComment(Comment comment)
+    public async Task<Comment> AddComment(Comment comment)
     {
         comment.Id = comments.Any()
             ? comments.Max(c => c.Id) + 1
             : 1;
         comments.Add(comment);
-        return Task.FromResult(comment);
+        return await Task.FromResult(comment);
     }
 
     public Task UpdateComment(Comment comment)
@@ -39,7 +39,7 @@ public class CommentInMemoryRepository : ICommentRepository
         return Task.CompletedTask;
     }
 
-    public Task<Comment> GetComment(int commentId)
+    public async Task<Comment> GetComment(int commentId)
     {
         Comment? comment = comments.SingleOrDefault(c => c.Id == commentId);
         if (comment == null)
@@ -47,7 +47,7 @@ public class CommentInMemoryRepository : ICommentRepository
             throw new InvalidOperationException($"Comment with id {commentId} does not exist");
         }
         
-        return Task.FromResult(comment);
+        return await Task.FromResult(comment);
     }
 
     public IQueryable<Comment> GetComments()
