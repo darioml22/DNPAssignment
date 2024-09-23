@@ -6,5 +6,5 @@ using FileRepositories;
 Console.WriteLine("Starting...");
 ICommentRepository commentRepository = new CommentFileRepository();
     
-CliApp cliApp = new CliApp(commentRepository);
-await cliApp.StartAsync();
+//CliApp cliApp = new CliApp(commentRepository);
+//await cliApp.StartAsync();

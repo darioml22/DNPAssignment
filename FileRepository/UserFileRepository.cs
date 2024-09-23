@@ -42,14 +42,14 @@ public class UserFileRepository : IUserRepository
         await File.WriteAllTextAsync(filePath, usersAsJson);
     }
 
-    public async Task RemoveUser(User user)
+    public async Task RemoveUser(int id)
     {
         string usersAsJson = await File.ReadAllTextAsync(filePath);
         List<User> users = JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
-        User? userToDelete = users.SingleOrDefault(c => c.Id == user.Id);
+        User? userToDelete = users.SingleOrDefault(c => c.Id == id);
         if (userToDelete == null)
         {
-            throw new InvalidOperationException($"User with id {user.Id} does not exist");
+            throw new InvalidOperationException($"User with id {id} does not exist");
         }
         users.Remove(userToDelete);
         usersAsJson = JsonSerializer.Serialize(users);
@@ -76,5 +76,14 @@ public class UserFileRepository : IUserRepository
         List<User> users =
             JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
         return users.AsQueryable();
+    }
+    
+    public List<User> GetAll()
+    {
+        string usersAsJson = File.ReadAllTextAsync(filePath).Result;
+        List<User> users =
+            JsonSerializer.Deserialize<List<User>>(usersAsJson)!;
+        return users;
+
     }
 }

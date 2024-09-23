@@ -8,7 +8,7 @@ namespace CLI.UI;
 
 public class CliApp()
 {
-    private readonly IUserRepository userRepository;
+    /*private readonly IUserRepository userRepository;
     private readonly ICommentRepository commentRepository;
     private readonly IPostRepository postRepository;
     private readonly AddCommentView addCommentView;
@@ -123,5 +123,5 @@ public class CliApp()
                 updateCommentView.UpdateComment(commentToUpdate);
                 break;
         }
-    }
+    }*/
 }

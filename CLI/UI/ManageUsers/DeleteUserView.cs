@@ -14,11 +14,11 @@ public class DeleteUserView
         
     }
     
-    public void DeleteUser(User user)
+    public void DeleteUser(int id)
     {
         Console.WriteLine("Enter user id");
-        user.Id = Convert.ToInt32(Console.ReadLine());
-        userRepository.RemoveUser(user);
+        id = Convert.ToInt32(Console.ReadLine());
+        userRepository.RemoveUser(id);
         Console.WriteLine("User deleted");
     }
 }

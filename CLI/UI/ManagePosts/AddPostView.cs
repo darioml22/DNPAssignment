@@ -13,7 +13,7 @@ public class AddPostView
         
     }
     
-    public async Task<Post> AddPost()
+    /*public async Task<Post> AddPost()
     {
         Post post = new Post();
         Console.WriteLine("Enter post title");
@@ -21,5 +21,5 @@ public class AddPostView
         Console.WriteLine("Enter post content");
         post.Content = Console.ReadLine();
         return await postRepository.AddPost(post);
-    }
+    }*/
 }

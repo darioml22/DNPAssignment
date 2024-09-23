@@ -13,9 +13,9 @@ public class AddCommentView
         
     }
 
-    public async Task<Comment> AddComment()
+    /*public async Task<Comment> AddComment()
     {
-        Comment comment = new Comment();
+        Comment comment = new Comment(comment.PostId, comment.UserId, comment.Content);
         Console.WriteLine("Enter post ID");
         comment.PostId = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Enter user ID");
@@ -23,5 +23,5 @@ public class AddCommentView
         Console.WriteLine("Enter comment content");
         comment.Content = Console.ReadLine();
         return await commentRepository.AddComment(comment);
-    }
+    }*/
 }

@@ -42,14 +42,14 @@ public class PostFileRepository : IPostRepository
         await File.WriteAllTextAsync(filePath, postsAsJson);
     }
 
-    public async Task DeletePost(Post post) 
+    public async Task DeletePost(int id) 
     {
         string postsAsJson = await File.ReadAllTextAsync(filePath);
         List<Post> posts = JsonSerializer.Deserialize<List<Post>>(postsAsJson)!;
-        Post? postToDelete = posts.SingleOrDefault(c => c.Id == post.Id);
+        Post? postToDelete = posts.SingleOrDefault(c => c.Id == id);
         if (postToDelete == null)
         {
-            throw new InvalidOperationException($"Post with id {post.Id} does not exist");
+            throw new InvalidOperationException($"Post with id {id} does not exist");
         }
         posts.Remove(postToDelete);
         postsAsJson = JsonSerializer.Serialize(posts);
@@ -76,5 +76,14 @@ public class PostFileRepository : IPostRepository
         List<Post> posts =
             JsonSerializer.Deserialize<List<Post>>(postsAsJson)!;
         return posts.AsQueryable();
+    }
+
+    public List<Post> GetAll()
+    {
+        string postsAsJson = File.ReadAllTextAsync(filePath).Result;
+        List<Post> posts =
+            JsonSerializer.Deserialize<List<Post>>(postsAsJson)!;
+        return posts;
+
     }
 }

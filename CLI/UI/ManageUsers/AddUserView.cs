@@ -12,7 +12,7 @@ public class AddUserView
         this.userRepository = userRepository;
     }
 
-    public async Task<User> AddUser()
+    /*public async Task<User> AddUser()
     {
         User user = new User();
         Console.WriteLine("Enter username");
@@ -20,5 +20,5 @@ public class AddUserView
         Console.WriteLine("Enter password");
         user.Password = Console.ReadLine();
         return await userRepository.AddUser(user);
-    }
+    }*/
 }
