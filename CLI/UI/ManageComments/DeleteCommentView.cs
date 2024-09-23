@@ -14,11 +14,11 @@ public class DeleteCommentView
         
     }
     
-    public void DeleteComment(Comment comment)
+    public void DeleteComment(int id)
     {
         Console.WriteLine("Enter comment id");
-        comment.Id = Convert.ToInt32(Console.ReadLine());
-        commentRepository.DeleteComment(comment);
+        id = Convert.ToInt32(Console.ReadLine());
+        commentRepository.DeleteComment(id);
         Console.WriteLine("Comment deleted");
     }
 }

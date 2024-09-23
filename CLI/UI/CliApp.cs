@@ -8,18 +8,16 @@ namespace CLI.UI;
 
 public class CliApp()
 {
-    private readonly IUserRepository userRepository;
+    /*private readonly IUserRepository userRepository;
     private readonly ICommentRepository commentRepository;
     private readonly IPostRepository postRepository;
     private readonly AddCommentView addCommentView;
     private readonly AddPostView addPostView;
     private readonly AddUserView addUserView;
 
-    public CliApp( IUserRepository userRepository, ICommentRepository commentRepository, IPostRepository postRepository) : this()
+    public CliApp(ICommentRepository commentRepository) : this()
     {
-        this.userRepository = userRepository;
         this.commentRepository = commentRepository;
-        this.postRepository = postRepository;
         addCommentView = new AddCommentView(commentRepository);
         addPostView = new AddPostView(postRepository);
         addUserView = new AddUserView(userRepository);
@@ -125,5 +123,5 @@ public class CliApp()
                 updateCommentView.UpdateComment(commentToUpdate);
                 break;
         }
-    }
+    }*/
 }

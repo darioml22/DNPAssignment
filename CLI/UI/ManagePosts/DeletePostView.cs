@@ -14,12 +14,11 @@ public class DeletePostView
         
     }
     
-    public void DeletePost(Post post)
+    public void DeletePost(int id)
     {
         Console.WriteLine("Enter post id");
-        post.Id = Convert.ToInt32(Console.ReadLine());
-        postRepository.DeletePost(post);
+        id = Convert.ToInt32(Console.ReadLine());
+        postRepository.DeletePost(id);
         Console.WriteLine("Post deleted");
-        cliApp.StartAsync();
     }
 }
