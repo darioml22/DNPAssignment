@@ -1,0 +1,60 @@
+﻿@page "/posts-list"
+@using ApiContracts
+@using BlazorApp.Services
+@using Entities
+@using FileRepositories
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<PageTitle>Post</PageTitle>
+
+<h1>Post</h1>
+
+<p>All the posts</p>
+
+@if (posts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (PostDto post in posts)
+            {
+                <tr>
+                    <td>@post.Title</td>
+                    <td>@post.UserId</td>
+                    <!--<td>@HttpPostService.GetPostByIdAsync(post.Id)</td>-->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private PostDto[]? posts;
+    private bool isPostAdded;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var query = new Uri(NavManager.Uri).Query;
+        if (query.Contains("post-added")) {
+            // Show snackbar
+            isPostAdded = true;
+
+            // Remove the query parameter
+            NavManager.NavigateTo("/posts-list");
+        }
+
+        var serverUrl = "http://localhost:5098";
+        posts = await Http.GetFromJsonAsync<PostDto[]>($"{serverUrl}/posts/all");
+    }
+
+}

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$USER_HOME$/Downloads/PRO3Assignment" vcs="Git" />
+    <mapping directory="$USER_HOME$/Downloads/PlayList-X" vcs="Git" />
+    <mapping directory="$USER_HOME$/Downloads/PlayList-X-main" vcs="Git" />
+    <mapping directory="$USER_HOME$/OneDrive/Documentos/GitHub/HOIV-TGW-SpanishTranslation-develop" vcs="Git" />
+    <mapping directory="$USER_HOME$/OneDrive/Documentos/HOIV-TGW-SpanishTranslation-develop" vcs="Git" />
+    <mapping directory="$USER_HOME$/OneDrive/Documentos/Paradox Interactive/Hearts of Iron IV/workshop/content/281990/thegreatwar" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>

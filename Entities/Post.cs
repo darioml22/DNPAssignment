@@ -8,6 +8,7 @@ public class Post
         this.Content = Content;
         this.UserId = UserId;
     }
+
     public int Id { get; set; }
     public string? Title { get; set; }
     public string? Content { get; set; }

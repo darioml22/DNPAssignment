@@ -53,4 +53,13 @@ public class UsersController : ControllerBase
         }
         return Results.Ok(users);
     }
+
+    public async Task<ActionResult<UpdateUserDto>> UpdateUser(
+        [FromBody] UpdateUserDto request,
+        [FromServices] IUserRepository userRepo)
+    {
+        User newParameters = new User(request.UserId, request.NewUserName, request.NewPassword);
+        await userRepo.UpdateUser(newParameters);
+        return Created($"/Users/{newParameters.Id}", newParameters);
+    }
 }
