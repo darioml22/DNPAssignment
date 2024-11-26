@@ -5,8 +5,10 @@
     <mapping directory="$USER_HOME$/Downloads/PlayList-X" vcs="Git" />
     <mapping directory="$USER_HOME$/Downloads/PlayList-X-main" vcs="Git" />
     <mapping directory="$USER_HOME$/OneDrive/Documentos/GitHub/HOIV-TGW-SpanishTranslation-develop" vcs="Git" />
+    <mapping directory="$USER_HOME$/OneDrive/Documentos/GitHub/electrikar" vcs="Git" />
     <mapping directory="$USER_HOME$/OneDrive/Documentos/HOIV-TGW-SpanishTranslation-develop" vcs="Git" />
     <mapping directory="$USER_HOME$/OneDrive/Documentos/Paradox Interactive/Hearts of Iron IV/workshop/content/281990/thegreatwar" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../BookShopEfc" vcs="Git" />
   </component>
 </project>

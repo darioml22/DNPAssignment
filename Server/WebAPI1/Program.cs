@@ -1,4 +1,3 @@
-using EfcRepositories;
 using FileRepositories;
 using RepositoryContracts;
 
@@ -8,8 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IPostRepository, EfcPostRepository>();
-builder.Services.AddScoped<IUserRepository, EfcUser>();
+builder.Services.AddScoped<IPostRepository, PostFileRepository>();
+builder.Services.AddScoped<IUserRepository, UserFileRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentFileRepository>();
 
 var app = builder.Build();
@@ -30,3 +29,4 @@ app.UseHttpsRedirection();
 
 
 app.Run();
+

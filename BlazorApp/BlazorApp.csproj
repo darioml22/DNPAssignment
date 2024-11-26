@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\ApiContracts\ApiContracts.csproj" />
       <ProjectReference Include="..\FileRepository\FileRepository.csproj" />
+      <ProjectReference Include="..\Server\EfcRepositories\EfcRepositories.csproj" />
     </ItemGroup>
 
     <ItemGroup>
